@@ -1,3 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap');
 
+body {
+  background-color: #f6fcff;
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
 
+input:focus, textarea:focus {
+    outline: none;
+}
