@@ -1,0 +1,13 @@
+footer {
+    background-color: rgba(0, 0, 0, 0.104);
+    height: 18vh;
+}
+
+h3, p {
+    font-family: Source Sans Pro;
+    text-align: center;
+}
+
+h3 {
+    padding: 1.2em 0;
+}
