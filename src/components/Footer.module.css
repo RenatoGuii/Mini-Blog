@@ -1,6 +1,6 @@
 footer {
     background-color: rgba(0, 0, 0, 0.104);
-    height: 18vh;
+    box-sizing: border-box;
 }
 
 h3, p {
@@ -8,5 +8,17 @@ h3, p {
 }
 
 h3 {
-    padding: 1.2em 0;
+    padding-top: 5px; 
+}
+
+p {
+    padding: 5px 0 7px 0; 
+}
+
+@media (min-height: 550px) {
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 }

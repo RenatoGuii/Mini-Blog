@@ -1,4 +1,10 @@
 .container {
-    min-height: 60vh;
-    margin-bottom: 5em;
+  height: 60vh;
+  margin-bottom: 5em;
+}
+
+@media (max-height: 597px) {
+  .container {
+    height: 388px;
   }
+}

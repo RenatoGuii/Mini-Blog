@@ -9,6 +9,7 @@ import Register from "./pages/Register/Register";
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/sobre" element={<About />} />
             <Route path="/cadastro" element={<Register />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
-        <Footer />
       </BrowserRouter>
+        <Footer />
     </div>
   );
 }
