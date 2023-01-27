@@ -15,7 +15,7 @@ p {
     padding: 5px 0 7px 0; 
 }
 
-@media (min-height: 550px) {
+@media (min-height: 597px) {
     footer {
         position: absolute;
         bottom: 0;
