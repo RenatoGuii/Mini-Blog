@@ -1,11 +1,9 @@
 .container {
-  height: 60vh;
-  margin-bottom: 5em;
-  width: 100vw;
+  height: 80vh;
 }
 
-@media (max-height: 597px) {
+@media (max-height: 553px) {
   .container {
-    height: 388px;
+    height: 442.88px;
   }
 }
