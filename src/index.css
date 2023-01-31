@@ -24,8 +24,21 @@ a {
   text-decoration: none;
 }
 
+.error, .loading {
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+
 .error {
   color: rgb(194, 5, 5);
   background-color: rgba(255, 0, 0, 0.449);
-  border-radius: 5px;
+}
+
+.loading {
+  background-color: orange;
+  color: yellow;
+  display: block;
+  margin: 20px auto;
+  cursor: progress;
 }

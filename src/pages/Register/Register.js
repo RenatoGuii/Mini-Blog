@@ -1,6 +1,7 @@
 import styles from "./Register.module.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -9,27 +10,32 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const changeSubmit = (e) => {
+  const { createUser, error: authError, loading } = useAuthentication();
+
+  const changeSubmit = async (e) => {
     e.preventDefault();
+
+    const user = {
+      name,
+      email,
+      password,
+    };
 
     if (password !== confirmPassword) {
       setError("As senhas precisam ser iguais!");
-    } else {
-      const user = {
-        name,
-        email,
-        password,
-      };
-
-      console.log(user);
-
-      setError("");
-      setName("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
+      return;
     }
+
+    const res = await createUser(user);
+
+    console.log(res);
   };
+
+  useEffect(() => {
+    if (authError) {
+      setError(authError);
+    }
+  }, [authError]);
 
   return (
     <div className={styles.cadastro}>
@@ -76,7 +82,8 @@ const Register = () => {
             required
           />
         </label>
-        <input type="submit" value="Entrar" className={styles.submit} />
+        {!loading && <input type="submit" value="Entrar" className={styles.submit} />}
+        {loading && <span className="loading" >Aguarde...</span>}
         {error && <p className="error">{error}</p>}
       </form>
     </div>
