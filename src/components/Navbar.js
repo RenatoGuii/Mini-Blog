@@ -8,6 +8,7 @@ import { useAuthContext } from "../contexts/AuthContext";
 
 const Navbar = () => {
   const { user } = useAuthContext();
+  const { logout } = useAuthentication();
 
   return (
     <nav>
@@ -67,7 +68,7 @@ const Navbar = () => {
         </li>
         {user && (
           <li>
-            <NavLink to="/">Sair</NavLink>
+            <NavLink onClick={logout}>Sair</NavLink>
           </li>
         )}
       </ul>

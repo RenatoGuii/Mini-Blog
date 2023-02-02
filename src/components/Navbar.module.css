@@ -12,6 +12,7 @@ nav {
     font-size: 1.3em;
     color: black;
     padding-left: 1vw;
+    flex-wrap: wrap;
 }
 
 .title span {
