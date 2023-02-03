@@ -41,6 +41,7 @@ form {
 .forms input::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.37);
     font-weight: 600;
+    font-family: "Source Sans Pro";
 }
 
 .submit {

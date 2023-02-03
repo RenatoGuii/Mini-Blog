@@ -82,8 +82,10 @@ const Register = () => {
             required
           />
         </label>
-        {!loading && <input type="submit" value="Entrar" className={styles.submit} />}
-        {loading && <span className="loading" >Aguarde...</span>}
+        {!loading && (
+          <input type="submit" value="Entrar" className={styles.submit} />
+        )}
+        {loading && <span className="loading">Aguarde...</span>}
         {error && <p className="error">{error}</p>}
       </form>
     </div>
