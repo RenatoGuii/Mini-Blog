@@ -2,7 +2,6 @@ import styles from "./Login.module.css";
 
 import { useEffect, useState } from "react";
 import { useAuthentication } from "../../hooks/useAuthentication";
-import { useAuthContext } from "../../contexts/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");

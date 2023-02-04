@@ -1,19 +1,56 @@
 import styles from "./NewPost.module.css";
+
 import { useState } from "react";
-import { useAuthentication } from "../../hooks/useAuthentication";
-import { useAuthValue } from "../contexts/AuthContext"
+import { useAuthContext } from "../../contexts/AuthContext";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useNavigate } from "react-router";
 
 const NewPost = () => {
   const [title, setTitle] = useState("");
   const [urlImage, setUrlImage] = useState("");
   const [content, setContent] = useState("");
-  const [tags, setTags] = useState("");
+  const [tags, setTags] = useState([]);
+  const [formError, setFormError] = useState("");
 
-  const { user } = useAuthValue()
+  const { user } = useAuthContext();
 
+  const navigate = useNavigate();
 
-  const changeSubmit = (e) => {
+  const { insertDocument, response } = useInsertDocument("posts");
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setFormError("");
+
+    // validate image URL
+    try {
+      new URL(urlImage);
+    } catch (error) {
+      setFormError("A imagem precisa ser uma URL!");
+    }
+
+    // criar array de tags
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
+    // checar todos os valores
+    if (!title || !urlImage || !content || !tags) {
+      setFormError("Todos os campos precisam ser preenchidos!");
+    }
+
+    if (formError) return;
+
+
+    insertDocument({
+      title,
+      urlImage,
+      content,
+      tagsArray,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
+
+    // redirect to home page
+    navigate("/");
   };
 
   return (
@@ -25,7 +62,7 @@ const NewPost = () => {
         Escreva sobre o que quiser e compartilhe o seu conhecimento!{" "}
       </p>
 
-      <form onSubmit={changeSubmit}>
+      <form onSubmit={handleSubmit}>
         <label className={styles.forms}>
           <p>Título:</p>
           <input
@@ -37,7 +74,7 @@ const NewPost = () => {
           />
         </label>
         <label className={styles.forms}>
-          <p>Insira uma imagem que representa seu post:</p>
+          <p>URL da imagem:</p>
           <input
             type="text"
             placeholder="Insira uma imagem que representa seu post"
@@ -47,7 +84,7 @@ const NewPost = () => {
           />
         </label>
         <label className={styles.forms}>
-          <p>Insira o conteúdo do post:</p>
+          <p>Conteúdo:</p>
           <textarea
             cols="30"
             rows="3"
@@ -67,11 +104,13 @@ const NewPost = () => {
             value={tags}
           />
         </label>
-        {!loading && (
-          <input type="submit" value="Entrar" className={styles.submit} />
+        {!response.loading && (
+          <input type="submit" value="Criar Post" className={styles.submit} />
         )}
-        {loading && <span className="loading">Aguarde...</span>}
-        {error && <p className="error">{error}</p>}
+        {response.loading && <span className="loading">Aguarde...</span>}
+        {(response.error || formError) && (
+          <p className="error">{response.error || formError}</p>
+        )}
       </form>
     </div>
   );
