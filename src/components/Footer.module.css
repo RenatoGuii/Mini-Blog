@@ -4,10 +4,14 @@ footer {
     height: 10%;
     min-height: 43.2px;
     position: relative;
+    display: flex;
 }
 
 .text_footer {
-    position: absolute;
-    top: calc(50% - 24px);
-    left: calc(50% - 166.33px);
+    display: block;
+    margin: auto;
+}
+
+.text_footer p {
+    text-align: center;
 }

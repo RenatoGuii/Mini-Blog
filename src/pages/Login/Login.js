@@ -57,7 +57,7 @@ const Login = () => {
         {!loading && (
           <input type="submit" value="Entrar" className={styles.submit} />
         )}
-        {loading && <span className="loading">Aguarde...</span>}
+        {loading && <input type="submit" value="Aguarde..." className="loading" />}
         {error && <p className="error">{error}</p>}
       </form>
     </div>

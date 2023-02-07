@@ -27,6 +27,7 @@ const NewPost = () => {
       new URL(urlImage);
     } catch (error) {
       setFormError("A imagem precisa ser uma URL!");
+      return
     }
 
     // criar array de tags
@@ -107,7 +108,7 @@ const NewPost = () => {
         {!response.loading && (
           <input type="submit" value="Criar Post" className={styles.submit} />
         )}
-        {response.loading && <span className="loading">Aguarde...</span>}
+        {response.loading && <input type="submit" value="Aguarde..." className="loading" />}
         {(response.error || formError) && (
           <p className="error">{response.error || formError}</p>
         )}

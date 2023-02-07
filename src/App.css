@@ -2,8 +2,8 @@
   height: 80vh;
 }
 
-@media (max-height: 553px) {
+@media (max-height: 640px) {
   .container {
-    height: 442.88px;
+    height: 509px;
   }
 }
