@@ -1,0 +1,46 @@
+.detail {
+    margin-bottom: 30px;
+}
+
+.detail img {
+    max-width: 100%;
+}
+
+.detail h3 {
+    margin-top: 20px;
+    font-weight: 600;
+    padding-left: 0.5px;
+    font-size: 22px;
+}
+
+.detail .author {
+    color: rgba(0, 0, 0, 0.57);
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.detail .tags {
+    color: black;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.detail .tags .tag {
+    color: rgba(0, 0, 0, 0.57);
+}
+
+.detail .button {
+    color: #f6fcff;
+    background-color: black;
+    font-size: 12px;
+    padding: 8px 15px;
+    border: 2px solid black;
+}
+
+.detail .button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: #f6fcff;
+    transition: 0.5s;
+}

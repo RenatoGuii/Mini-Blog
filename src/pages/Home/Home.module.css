@@ -1,11 +1,12 @@
 .home {
     width: 50%;
+    max-width: 372.400px;
     height: auto;
     margin: auto;
 }
 
 .home h1 {
-    padding: 8% 0;
+    padding: 30px 0;
 }
 
 .searchBar {
@@ -19,8 +20,7 @@
 }
 
 .searchBar input {
-    margin-right: 10px;
-    width: 70%;
+    width: 78%;
     height: 100%;
     border: none;
     background-color: #f6fcff;
@@ -36,8 +36,7 @@
     font-size: 12px;
 }
 
-.searchBar button:hover,
-.post button:hover {
+.searchBar button:hover {
     cursor: pointer;
     color: black;
     background-color: #f6fcff;
@@ -46,29 +45,6 @@
 
 .post {
     margin: 25px 0;
-}
-
-.post h3 {
-    font-weight: 600;
-    padding-left: 0.5px;
-}
-
-.post .author {
-    color: rgba(0, 0, 0, 0.57);
-    font-style: italic;
-    font-size: 13px;
-}
-
-.post .tags {
-    color: black;
-    margin: 20px 0;
-}
-
-.post button {
-    color: #f6fcff;
-    background-color: black;
-    font-size: 12px;
-    padding: 5px 10px;
 }
 
 .noResults {

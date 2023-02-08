@@ -3,10 +3,13 @@ import styles from "./Home.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import PostDetail from "../../components/PostDetail"
 
 const Home = () => {
   const [query, setQuery] = useState()
-  const [posts, setPosts] = useState([])
+
+  const { documents: posts, loading } = useFetchDocuments("posts")
 
   const { user } = useAuthContext();
 
@@ -24,6 +27,10 @@ const Home = () => {
       </form>
 
       <div className={styles.post}>
+        {loading && <p>Carregando...</p>}
+        {posts && posts.map((post) => (
+          <PostDetail key={post} post={post} />
+        ))}
         {posts && posts.length === 0 && (
           <div className={styles.noResults}>
             <p>Não foram encontrados posts :(</p>
