@@ -46,7 +46,7 @@ const NewPost = () => {
       urlImage,
       content,
       tagsArray,
-      uid: user.uid,
+      id: user.uid,
       createdBy: user.displayName,
     });
 
