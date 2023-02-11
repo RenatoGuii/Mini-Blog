@@ -1,23 +1,25 @@
 import styles from "./PostDetail.module.css"
 
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
-const postDetail = ({ post }) => {
+const PostDetail = ({ post }) => {
+  
+  const { id = post.id } = useParams()
 
   return (
     <div className={styles.detail}>
-        <img src={post.urlImage} />
+        <img src={post.urlImage} alt={post.title} />
         <h3>{post.title}</h3>
         <p className={styles.author}>por: {post.createdBy}</p>
         <p className={styles.tags}>
             {post.tagsArray.map((tag) => (
-                <span key={tag}><b>#</b><span className={styles.tag}>{tag}</span> </span>
+                <span key={tag}><b>#</b><span className={styles.tag}>{tag}&nbsp;&nbsp;</span> </span>
             ))}
         </p>
         
-        <Link to={`/posts/${post.id}`} className={styles.button} >Ler</Link>
+        <Link to={`/posts/${id}`} className={styles.button} >Ler</Link>
     </div>
   )
 }
 
-export default postDetail
+export default PostDetail

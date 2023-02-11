@@ -18,6 +18,7 @@ import Login from "./pages/Login/Login";
 import NewPost from "./pages/NewPost/NewPost";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Search from "./pages/Search/Search";
+import SinglePost from "./pages/SinglePost/SinglePost";
 
 // COMPONENTS
 import Navbar from "./components/Navbar";
@@ -67,6 +68,7 @@ function App() {
                 path="/dashboard"
                 element={user ? <Dashboard /> : <Navigate to="/" />}
               />
+              <Route path="/posts/:id" element={<SinglePost />} />
             </Routes>
           </div>
           <Footer />

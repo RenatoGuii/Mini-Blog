@@ -1,46 +1,46 @@
-.search {
+.post {
     text-align: center;
     margin-bottom: 30px;
     margin: auto;
     width: 50%;
 }
 
-.search h2 {
+.post h2 {
     margin-top: 20px;
     font-weight: 600;
 }
 
-.search .author {
+.post .author {
     color: rgba(0, 0, 0, 0.57);
     font-style: italic;
     font-size: 13px;
     margin: 15px 0;
 }
 
-.search img {
+.post img {
     display: block;
     margin: auto;
 }
 
-.search .content {
+.post .content {
     color: rgba(0, 0, 0, 0.57);
     margin: 10px 0 25px 0;
     word-wrap: break-word;
 }
 
-.search .tags {
+.post .tags {
     color: black;
     margin: 10px 0 50px 0; 
     font-size: 14px;
 }
 
-.search .tags .tag {
+.post .tags .tag {
     color: rgba(0, 0, 0, 0.57);
 }
 
-.button {
+.post .button {
     display: block;
-    margin: 50px auto;
+    margin: 20px auto;
     background-color: rgb(11, 227, 11);
     color: #f6fcff;
     font-weight: 600;
@@ -50,7 +50,7 @@
     width: 92px;
 }
 
-.button:hover {
+.post .button:hover {
     cursor: pointer;
     color: rgb(11, 227, 11);
     background-color: #f6fcff;

@@ -11,7 +11,8 @@ const Home = () => {
   const { documents: posts, loading } = useFetchDocuments("posts");
   const { user } = useAuthContext();
 
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();

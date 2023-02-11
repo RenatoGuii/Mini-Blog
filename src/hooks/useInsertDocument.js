@@ -25,7 +25,7 @@ export const useInsertDocument = (docCollection) => {
   const [response, dispatch] = useReducer(insertReducer, initialState);
   
   // deal with memory task
-  const [cancelled, setCancelled] = useState(false);
+  const [cancelled] = useState(false);
   
   const checkCancelBeforeDispatch = (action) => {
     if (!cancelled) {
