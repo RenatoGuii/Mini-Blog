@@ -69,6 +69,7 @@
     border: 2px solid black;
     color: black;
     background-color: #f6fcff;
+    height: 29.2px;
 }
 
 .dashboard .container .posts .post div .buttons:hover {

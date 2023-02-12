@@ -26,13 +26,18 @@ const Dashboard = () => {
               if (post.uid === user.uid) {
                 return (
                   <div className={styles.post}>
-                    <span>{post.title}</span>
+                    <div style={{width: "50%"}}><span>{post.title}</span></div>
                     <div>
                       <Link to={`/posts/${post.id}`} className={styles.buttons}>
                         Ler
                       </Link>
 
-                      <Link to={`/posts/edit/${post.id}`} className={styles.buttons}>Editar</Link>
+                      <Link
+                        to={`/posts/edit/${post.id}`}
+                        className={styles.buttons}
+                      >
+                        Editar
+                      </Link>
 
                       <button
                         onClick={() => deleteDocument(post.id)}
