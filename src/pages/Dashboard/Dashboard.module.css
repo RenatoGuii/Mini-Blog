@@ -1,0 +1,88 @@
+.dashboard {
+    width: 80%;
+    margin: auto;
+}
+
+@media (max-width: 429px) {
+    .dashboard {
+        width: 343.68px;
+    }
+}
+
+.dashboard h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dashboard p {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.57);
+    margin-bottom: 15px;
+}
+
+.dashboard .container .titles {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.134);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.dashboard .container .createButton {
+    display: block;
+    margin: 50px auto;
+    background-color: rgb(11, 227, 11);
+    color: #f6fcff;
+    font-weight: 600;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 5px;
+    width: 160px;
+}
+
+.dashboard .container .posts {
+    padding: 0 5px;
+}
+
+.dashboard .container .posts .post {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dashboard .container .posts .post span {
+    color: rgba(0, 0, 0, 0.57);
+}
+
+.dashboard .container .posts .post div {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.dashboard .container .posts .post div .buttons {
+    color: #f6fcff;
+    background-color: black;
+    font-size: 12px;
+    padding: 5px 7px;
+    border: 2px solid black;
+    color: black;
+    background-color: #f6fcff;
+}
+
+.dashboard .container .posts .post div .buttons:hover {
+    cursor: pointer;
+    color: black;
+    background-color: #f6fcff;
+    transition: 0.5s;
+    color: #f6fcff;
+    background-color: black;
+}
+
+.dashboard .container .createButton:hover {
+    cursor: pointer;
+    color: rgb(11, 227, 11);
+    background-color: #f6fcff;
+    transition: 0.7s;
+}

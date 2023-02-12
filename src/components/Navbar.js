@@ -37,7 +37,7 @@ const Navbar = () => {
               to="/posts/criar"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              Novo Post
+              Criar
             </NavLink>
           )}
         </li>

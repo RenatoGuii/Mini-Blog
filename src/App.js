@@ -48,6 +48,7 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <div className="container">
+            {user && <p className="displayName">{user.displayName}</p>}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sobre" element={<About />} />

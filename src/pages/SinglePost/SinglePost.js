@@ -30,9 +30,6 @@ const SinglePost = () => {
               </span>
             ))}
           </p>
-          <Link className={styles.button} to="/">
-            Voltar
-          </Link>
         </>
       )}
     </div>
