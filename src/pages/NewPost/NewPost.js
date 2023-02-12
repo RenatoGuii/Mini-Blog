@@ -60,7 +60,7 @@ const NewPost = () => {
 
       <p className={styles.p1}>
         {" "}
-        Escreva sobre o que quiser e compartilhe o seu conhecimento!{" "}
+        Escreva sobre o que quiser!{" "}
       </p>
 
       <form onSubmit={handleSubmit}>
