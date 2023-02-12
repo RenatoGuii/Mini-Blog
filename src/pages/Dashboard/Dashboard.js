@@ -1,11 +1,13 @@
 import styles from "./Dashboard.module.css";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useDeleteDocument } from "../../hooks/useDeleteDocument";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const { user } = useAuthContext();
   const { documents: posts } = useFetchDocuments("posts");
+  const { deleteDocument } = useDeleteDocument("posts");
 
   return (
     <div className={styles.dashboard}>
@@ -26,12 +28,23 @@ const Dashboard = () => {
                   <div className={styles.post}>
                     <span>{post.title}</span>
                     <div>
-                      <Link to={`/posts/${post.id}`} className={styles.buttons}>Ler</Link>
-                      <Link className={styles.buttons}>Editar</Link>
-                      <button className={styles.buttons}>Excluir</button>
+                      <Link to={`/posts/${post.id}`} className={styles.buttons}>
+                        Ler
+                      </Link>
+
+                      <Link to={`/posts/edit/${post.id}`} className={styles.buttons}>Editar</Link>
+
+                      <button
+                        onClick={() => deleteDocument(post.id)}
+                        className={styles.buttons}
+                      >
+                        Excluir
+                      </button>
                     </div>
                   </div>
                 );
+              } else {
+                return null;
               }
             })}
 

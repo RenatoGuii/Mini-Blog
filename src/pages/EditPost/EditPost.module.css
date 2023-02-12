@@ -1,12 +1,13 @@
-.cadastro {
+.EditPost {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1em;
 }
 
-.cadastro .p1 {
+.EditPost .p1,
+.EditPost .previewTitle {
+    text-align: center;
     padding: 0.4em 0.5em;
     color: rgba(0, 0, 0, 0.51);
 }
@@ -15,7 +16,7 @@ form {
     display: flex;
     flex-direction: column;
     height: 40vh;
-    width: 60vw;
+    width: 70vw;
     max-width: 522.7px;
     padding: 10px;
 }
@@ -30,7 +31,7 @@ form {
     padding-bottom: 5px;
 }
 
-.forms input {
+.forms input, textarea {
     border: none;
     background-color: #f6fcff;
     border-bottom: 2px solid rgba(0, 0, 0, 0.114);
@@ -38,10 +39,20 @@ form {
     padding: 8px 0 0 3px;
 }
 
-.forms input::-webkit-input-placeholder {
+.forms input::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder {
     color: rgba(0, 0, 0, 0.37);
     font-weight: 600;
     font-family: "Source Sans Pro";
+}
+
+textarea {
+    resize: none;
+}
+
+.EditPost .previewImage {
+    margin: auto;
+    max-width: 200px;
 }
 
 .submit {

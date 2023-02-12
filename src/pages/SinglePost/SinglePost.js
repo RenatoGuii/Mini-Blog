@@ -1,5 +1,5 @@
 import styles from "./SinglePost.module.css";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
 
 const SinglePost = () => {

@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 
 // HOOKS
@@ -19,6 +19,7 @@ import NewPost from "./pages/NewPost/NewPost";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Search from "./pages/Search/Search";
 import SinglePost from "./pages/SinglePost/SinglePost";
+import EditPost from "./pages/EditPost/EditPost"
 
 // COMPONENTS
 import Navbar from "./components/Navbar";
@@ -49,6 +50,7 @@ function App() {
           <Navbar />
           <div className="container">
             {user && <p className="displayName">{user.displayName}</p>}
+            {!user && <Link to="/login" className="displayName">Logar</Link>}
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/sobre" element={<About />} />
@@ -70,6 +72,7 @@ function App() {
                 element={user ? <Dashboard /> : <Navigate to="/" />}
               />
               <Route path="/posts/:id" element={<SinglePost />} />
+              <Route path="/posts/edit/:id" element={<EditPost />} />
             </Routes>
           </div>
           <Footer />

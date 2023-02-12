@@ -74,10 +74,9 @@
 .dashboard .container .posts .post div .buttons:hover {
     cursor: pointer;
     color: black;
-    background-color: #f6fcff;
+    background-color: red;
     transition: 0.5s;
     color: #f6fcff;
-    background-color: black;
 }
 
 .dashboard .container .createButton:hover {

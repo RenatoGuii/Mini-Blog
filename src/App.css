@@ -1,8 +1,9 @@
 .container {
-  min-height: 80vh;
+  min-height: 685px;
 }
 
 .displayName {
   font-weight: 600;
-  margin: 10px 0 0 10px;
+  margin-left: 10px;
+  color: black;
 }
